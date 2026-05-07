@@ -7,7 +7,7 @@ param(
     [switch]$NoSign
 )
 
-$WinDivertPath = "C:\WinDivert-2.2.2-A"
+$WinDivertPath = ".\windivert\"
 $SourcePath = "src"
 $SourceFile = "ProxyBridge.c"
 $OutputDLL = "ProxyBridgeCore.dll"
@@ -36,14 +36,7 @@ if (-not (Test-Path $WinDivertPath)) {
 function Compile-MSVC {
     Write-Host "`nCompiling DLL with MSVC..." -ForegroundColor Green
 
-    $vsWhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
-
-    if (-not (Test-Path $vsWhere)) {
-        Write-Host "Visual Studio not found" -ForegroundColor Yellow
-        return $false
-    }
-
-    $vsPath = & $vsWhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+    $vsPath = "C:\Program Files\Microsoft Visual Studio\18\Insiders\" 
     if (-not $vsPath) {
         Write-Host "Visual Studio C++ tools not found" -ForegroundColor Yellow
         return $false

@@ -1,18 +1,13 @@
 ## Windows
 
-*.exe
-*.dll
-*.sys
-*.zip
-*.py
+installer/**
 build/**
-*.pyc
 Windows/gui/bin/**
 Windows/gui/obj/**
 Windows/cli/bin/**
 Windows/cli/obj/**
 .vscode/**
-Windows/output/ProxyBridge_CLI.pdb
+Windows/output/**
 
 ## macOS / Xcode / Swift
 
