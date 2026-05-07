@@ -1,6 +1,5 @@
 ## Windows
 
-installer/**
 build/**
 Windows/gui/bin/**
 Windows/gui/obj/**
